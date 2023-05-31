@@ -1,0 +1,32 @@
+<%= form_with(model: recipe, local: true) do |form| %>
+  <!--  <div data-controller=dynamic-dropdown>
+        <div class="field">
+          <%= form.label :dish_type %>
+          <%#= form.select :dish_type, Recipe.dish_types, {}, { data: { action: 'dynamic-dropdown#change', 'dynamic-dropdown-target' => 'dropdown' } } %>
+          <%= form.text_field :dish_type %>
+        </div>
+        <div data-dynamic-dropdown-target=content data-target-value=0>
+          <h1>Main dish</h1>
+        </div>
+        <div data-dynamic-dropdown-target=content data-target-value=1>
+          <h1>Dessert</h1>
+        </div>
+        <div data-dynamic-dropdown-target=content data-target-value=2>
+          <h1>Drink</h1>
+        </div>
+    </div> -->
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :dish_type %>
+    <%= form.text_field :dish_type %>
+  </div>
+
+  <div class="field">
+    <%= form.submit %>
+  </div>
+<% end %>

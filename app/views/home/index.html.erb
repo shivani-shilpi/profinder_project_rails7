@@ -1,0 +1,39 @@
+<div class="col-lg-12 mt-3">
+    <h1 class="text-center mt-5"></h1>
+</div>
+
+<div class="container">
+   <div class="row mt-3">
+       <div class="row">
+    <div class="desc" id="consultant">
+        <div class="col-lg-12">
+            <div class="col-sm-4 pull-right" id="consultant">
+                <label for="consultant">User:</label>
+                <%= select_tag('user_id', options_from_collection_for_select(User.all, 'id', 'name'), class: 'form-control select2', prompt: "select") %> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="role-content" style="margin-top: 120px;"></div>
+
+<script>
+    window.onload = function() {
+        $("#user_id").on("change", function () {
+            var user_id = this.value;
+            if (user_id != "") {
+            $.ajax({
+                url: "/home/render_user_data",
+                method: "GET",
+                type: "js",
+                data: { user_id: user_id },
+                success: function (data) {
+                $('#user_id').append( function () {
+                    alert(data)
+                })
+                }
+            })
+            }
+        })
+    };
+</script> 

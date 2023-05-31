@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @pationt %>
+
+<% @pationt.physicians.each do |p| %>
+<p>
+  <strong>Physician Name:</strong>
+  <%= p.name %>
+</p>
+<% end %>
+
+<div>
+  <%= link_to "Edit this pationt", edit_pationt_path(@pationt) %> |
+  <%= link_to "Back to pationts", pationts_path %>
+
+  <%= button_to "Destroy this pationt", @pationt, method: :delete %>
+</div>

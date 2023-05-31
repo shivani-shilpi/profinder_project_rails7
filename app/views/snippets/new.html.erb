@@ -1,0 +1,15 @@
+<%= form_with model: @snippet do |f| %>
+   <div>
+      <%= f.label :language %>
+      <%= f.select :language, ['Ruby', 'Python']%>
+   </div>
+
+   <div>
+      <%= f.label :plain_code %>
+      <%= f.text_area :plain_code %>
+   </div>
+
+   <div>
+      <%= f.submit %>
+   </div>
+<% end %>

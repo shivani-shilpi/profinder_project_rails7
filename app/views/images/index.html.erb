@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+<%= link_to "<- Back to the Tool", tool_index_path %>
+<h2>Images</h2>
+<div id="images">
+  <% @images.each do |image| %>
+    <div id="<%= dom_id image %>">
+      <% if image.data_uri.length > 50 %>
+        <%= truncate image.data_uri, length: 50 %>
+        <%= link_to 'more', "$(this).parent().html('#{escape_javascript image.data_uri}')", class: "text-muted text-decoration-none" %>
+        <% else %>
+        <%= image.data_uri %>
+      <% end %>
+    <p>
+      <%= link_to "View", image %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New image", new_image_path %>

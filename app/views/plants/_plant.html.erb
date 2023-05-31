@@ -1,0 +1,32 @@
+<div id="<%= dom_id plant %>">
+  <div class="card shadow mb-3">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-2">
+          <%= image_tag plant.image, class: "img-fluid", style:"width:100px; height:100px;" if plant.image.attached? %>
+        </div>
+        <div class="col-lg-7 pt-3">
+          <p>
+            <strong>Name:</strong>
+            <%= plant.name %>
+          </p>
+          <p>
+            <strong>Price:</strong>
+            <%= plant.price %>
+          </p>
+        </div>
+        <div class="col-lg-3 pt-4">
+          <%= link_to edit_plant_path(plant), class: "btn btn-outline-info" do %>
+            <i class="fa-solid fa-file-pen"></i>
+          <% end %>
+          <%= link_to plant, method: :delete, data: { confirm: "Are you sure"}, class: "btn btn-outline-danger" do %>
+            <i class="fa-solid fa-trash-can-arrow-up"></i>
+          <% end %>
+          <%= link_to plant, class: "btn btn-outline-dark" do %>
+            <i class="fa-solid fa-arrow-right"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>

@@ -1,0 +1,26 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @recipe %>
+
+<div>
+  <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> |
+  <%= link_to "Back to recipes", recipes_path %>
+
+  <%= button_to "Destroy this recipe", @recipe, method: :delete %>
+</div>
+
+<!-- <%= form_with(model: [@recipe, @famouse_recipe_city ], url: recipe_famouse_recipe_city_path(@recipe)) do |form| %>
+<div>
+   <%= form.label :place %>
+   <%= form.text_field :place %>
+</div>
+<div>
+   <%= form.label :city %>
+   <%= form.text_field :city %>
+</div>   
+<% end %>
+
+<% @famouse_recipe_city.each do |frc| %>
+   <%= frc.place %>
+   <%= frc.city %>
+<% end %>  -->

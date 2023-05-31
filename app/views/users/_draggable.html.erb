@@ -1,0 +1,15 @@
+<% dragActions = "dragstart->drag#dragStart
+                  dragover->drag#dragOver
+                  dragenter->drag#dragEnter
+                  drop->drag#drop
+                  dragend->drag#dragEnd" %>
+
+<%= content_tag(:div, class: "bi bi-grip-verticle graggable", draggable: true, data: {
+    controller: "drag",
+    action: dragActions,
+    resource_id: user.id,
+    url: "/drag/user",
+    parent: "users"
+}) do %>
+   <%= render "user" %>
+<% end %>

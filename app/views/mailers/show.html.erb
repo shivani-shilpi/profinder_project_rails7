@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @mailer %>
+
+<div>
+  <%= link_to "Edit this mailer", edit_mailer_path(@mailer) %> |
+  <%= link_to "Back to mailers", mailers_path %>
+
+  <%= button_to "Destroy this mailer", @mailer, method: :delete %>
+</div>

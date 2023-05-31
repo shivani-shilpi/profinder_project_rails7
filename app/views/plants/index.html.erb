@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+<div class="col-lg-8 mx-auto">
+  <h1>Plants</h1>
+  <%= link_to "New plant", new_plant_path, class: "btn btn-outline-primary mb-3" %>
+  <%= link_to "generate PDF", plant_pdf_plants_path, class: "btn btn-outline-info mb-3"%>
+  <div id="plants">
+    <% @plants.each do |plant| %>
+      <%= render "plants/draggable", plant: plant %>
+    <% end %>
+  </div>
+</div>
+
+

@@ -1,0 +1,26 @@
+
+
+    <table class="table table-bordered">
+        <thead>
+            <th>Appontment Date</th>
+            <th></th>
+            <th>Pationt</th>
+            <th>Physician</th>
+            <th>Edit</th>
+            <th>Show</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+            <% @appointments.each do |a| %>
+            <tr>
+                <td><%= a.appointment_date %><td>
+                <td><%= a.pationt.name %></td>
+                <td><%= a.physician.name %></td>
+                <td><%= link_to "edit", edit_appointment_path(a) %></td>
+                <td><%= link_to "show", appointment_path(a) %></td>
+                <td><%= link_to "delete", a, data: { method: :delete, confirm: "Are you sure"} %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <%= link_to "New appointment", new_appointment_path %>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profinder</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <link# rel="stylesheet" href="http://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css">
+    
+    <script# src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script# src = "http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <%= javascript_import_module_tag "https://ga.jspm.io/npm:@fortawesome/fontawesome-free@6.1.1/js/all.js" %>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <%= render 'shared/header' %>
+        <%= yield %>
+        <%= turbo_frame_tag 'remote_modal' %>
+      </div>  
+    </div>   
+  </body>
+</html>

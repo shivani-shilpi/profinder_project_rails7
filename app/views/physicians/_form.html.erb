@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="col-5">
+    <%= form_with(model: physician, local: true) do |form| %>
+      <div class="form-group mb-3">
+        <%= form.label :name, style: "display: block" %>
+        <%= form.text_field :name ,class: "form-control" %>
+      </div>
+
+      <div class="form-group mb-3">
+        <%= form.label :last_name, style: "display: block" %>
+        <%= form.text_field :last_name ,class: "form-control" %>
+      </div>
+
+      <div class="form-group mb-3">
+        <%= form.label :pationt %>
+        <%= form.collection_select :pationt_id, Pationt.all, :id, :name, class: "form-control" %>
+      </div>
+
+      <div class="form-group mb-3">
+        <strong><%= form.label :pationt %></strong>
+        <%= form.collection_check_boxes :pationt_ids, Pationt.all, :id, :name, class: "form-control" %>
+        <%#= form.select :pationt_id, Pationt.all.map { |x| [x.name, x.id] }, {prompt: "select pationt"}, {class: "form-control"} %>
+      </div>
+
+      <div class="form-group mb-3">
+        <%= form.submit %>
+      </div>
+    <% end %>
+  </div>   
+</div>  

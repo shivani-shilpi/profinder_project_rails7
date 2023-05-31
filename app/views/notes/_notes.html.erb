@@ -1,0 +1,56 @@
+<h3>Notes</h3>
+<% notable.notes.each do |note| %>
+  <div>
+    <%= note.title %>
+  </div>
+  <div>
+    <%= note.body %>
+  </div>
+   
+  <div>
+    <%= note.content %>
+  </div>
+
+  <div>
+    <%= link_to "Destroy", "/#{note.notable_type.downcase.pluralize}/#{note.notable_id}/notes/#{note.id}", method: :delete, data: {confirm: "Are you sure"} %> |
+    <%= link_to "Edit", "/#{note.notable_type.downcase.pluralize}/#{note.notable_id}/notes/#{note.id}/edit", data: { bs_toggle: "modal", bs_target: "#editNoteModal", remote: true } %>
+  </div>
+<% end %>
+
+<!-- Edit Modal -->
+<div class="modal fade" id="editNoteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+       <div id="editNoteForm">
+          
+       </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- New Modal -->
+<div class="modal fade" id="newNoteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+       <div id="newNoteForm">
+          
+       </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

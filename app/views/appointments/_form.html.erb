@@ -1,0 +1,17 @@
+<%= form_with model: @appointment do |f| %>
+   <div class="form-group mb-3">
+     <%= f.label :appointment_date %>
+     <%= f.datetime_select :appointment_date, class: "form-control" %>
+   </div>
+   <div class="form-group mb-3">
+     <%= f.label :pationt %>
+     <%= f.collection_select :pationt_id, Pationt.all, :id, :name, class: "form-control" %>
+   </div>
+   <div class="form-group mb-3">
+     <%= f.label :physician %>
+     <%= f.collection_select :physician_id, Physician.all, :id, :name, class: "form-control"  %>
+   </div>
+   <div class="form-group mb-3">
+     <%= f.submit %>
+   </div>
+<% end %>
